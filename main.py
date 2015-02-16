@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*
 
 from shentan.shentan import Shentan, CSVDict
-from disorder import *
 
 class StrokeCountDict(CSVDict):
   def __init__(self):
