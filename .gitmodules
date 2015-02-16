@@ -1,0 +1,3 @@
+[submodule "shentan"]
+	path = shentan
+	url = http://github.com/idreyn/shentan
