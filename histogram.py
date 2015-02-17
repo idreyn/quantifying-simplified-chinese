@@ -1,10 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import misc
 
 from main import *
 
-num_chars = 5000
+num_chars = 9933
 simp, trad = char_stroke_counts(num_chars)
 bins = range(1,30)
 
@@ -19,9 +18,10 @@ plt.xlabel('# of strokes')
 plt.ylabel('Fraction of characters')
 
 plt.figure(2)
-plt.hist(simp, bins=bins, normed=1, facecolor='blue', edgecolor='none', alpha=0.5)
-plt.hist(trad, bins=bins, normed=1, facecolor='green', edgecolor='none', alpha=0.5)
+plt.hist(simp, bins=bins, normed=1, facecolor='blue', edgecolor='none', alpha=0.5, label='simplified')
+plt.hist(trad, bins=bins, normed=1, facecolor='green', edgecolor='none', alpha=0.5, label='traditional')
 plt.xlabel('# of strokes')
 plt.ylabel('Fraction of characters')
+plt.legend()
 
 plt.show()

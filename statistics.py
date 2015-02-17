@@ -28,7 +28,7 @@ def disorder(ls):
 if __name__ == '__main__':
 	sh = Shentan() 
 
-	num_chars = 9933
+	num_chars = 5000
 
 	(
 		simp_char_strokes, 
