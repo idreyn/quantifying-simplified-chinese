@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from main import *
-from disorder import *
 
 simp_mean = []
 trad_mean = []
@@ -19,7 +18,7 @@ plt.plot(counts,trad_mean,'g',label='traditional',linewidth=2)
 plt.plot(counts,simp_mean,'b',label='simplified',linewidth=2)
 plt.axis([0,5000,0,20])
 plt.title('Character subset size vs. mean complexity')
-plt.xlabel('N most common characters')
+plt.xlabel('# most common characters')
 plt.ylabel('Mean number of strokes')
 plt.legend()
 plt.show()

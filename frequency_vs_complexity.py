@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from main import *
 
 show_regression = False
-num_chars = 9933
+num_chars = 5000
 simp_char_strokes, trad_char_strokes = char_stroke_counts(num_chars)
 diff_strokes = np.array(trad_char_strokes) - np.array(simp_char_strokes)
 

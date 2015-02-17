@@ -25,36 +25,40 @@ def disorder(ls):
 	m = max_displacement(ls)
 	return float(d) / m
 
-num_chars = 5000
+if __name__ == '__main__':
+	sh = Shentan() 
 
-(
-	simp_char_strokes, 
-	trad_char_strokes,
-	as_simp_char_strokes,
-	as_trad_char_strokes
-) = char_stroke_counts(num_chars,isolate_simplifications=True)
+	num_chars = 9933
 
-simp_char_strokes = np.array(simp_char_strokes)
-trad_char_strokes = np.array(trad_char_strokes)
+	(
+		simp_char_strokes, 
+		trad_char_strokes,
+		as_simp_char_strokes,
+		as_trad_char_strokes
+	) = char_stroke_counts(num_chars,sh,isolate_simplifications=True)
 
-sets = (
-	('simplified set',simp_char_strokes),
-	('traditional set',trad_char_strokes),
-	('actually simplified characters',as_simp_char_strokes),
-	('traditional versions of simplified characters',as_trad_char_strokes)
-)
+	simp_char_strokes = np.array(simp_char_strokes)
+	trad_char_strokes = np.array(trad_char_strokes)
 
-print 'Stroke count statistics for most common', num_chars, 'characters:\n'
+	sets = (
+		('simplified set',simp_char_strokes),
+		('traditional set',trad_char_strokes),
+		('different simplified set',as_simp_char_strokes),
+		('different traditional set',as_trad_char_strokes)
+	)
 
-for set in sets:
-	name = set[0]
-	data = set[1]
-	print '=== Data for ' + name + ' ==='
-	print 'mean:', np.mean(data)
-	print 'std:', np.std(data)
-	print 'median:', np.median(data)
-	print 'mode:', stats.mode(data)[0]
-	print 'max:', max(data)
-	print 'min:', min(data)
-	print 'disorder:', disorder(data)
-	print ''
+	print 'Stroke count statistics for most common', num_chars, 'characters:\n'
+
+	for set in sets:
+		name = set[0]
+		data = set[1]
+		print '=== Data for ' + name + ' ==='
+		print 'size:', len(data)
+		print 'mean:', np.mean(data)
+		print 'std:', np.std(data)
+		print 'median:', np.median(data)
+		print 'mode:', stats.mode(data)[0]
+		print 'max:', max(data)
+		print 'min:', min(data)
+		print 'disorder:', disorder(data)
+		print ''
