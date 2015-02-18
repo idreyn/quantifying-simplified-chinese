@@ -13,6 +13,7 @@ def displacement(ls):
 			ls[j-1], ls[j] = ls[j], ls[j-1]
 			count += 1
 			j -= 1
+	print count
 	return count
 
 def max_displacement(ls):
