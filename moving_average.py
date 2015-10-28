@@ -10,7 +10,6 @@ counts = range(100,5000,100)
 
 for i in counts:
 	s, t = char_stroke_counts(i)
-
 	simp_mean.append(np.mean(s))
 	trad_mean.append(np.mean(t))
 
